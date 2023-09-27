@@ -7,7 +7,7 @@ const DoneModal = ({ opened, close, doneList, setDoneList }) => {
 
     const onClickHandler = useCallback(() => {
         const cur = {
-            id:doneList.length+1,
+            id:new Date().getTime(),
             createdAt: new Date(),
             name: name,
             url: urlText,

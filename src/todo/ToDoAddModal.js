@@ -7,7 +7,7 @@ const ToDoAddModal = ({ opened, close, toDoList, setToDoList }) => {
 
     const onClickHandler = useCallback(() => {
         const cur = {
-            id:toDoList.length+1,
+            id:new Date().getTime(),
             createdAt: new Date(),
             name: name,
             url: urlText,

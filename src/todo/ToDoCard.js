@@ -11,12 +11,12 @@ const ToDoCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
   const {toDoList,setToDoList,fetchToDo,handleOnDrop} = DataState();
 
-  useEffect(()=>{
-    fetchToDo();
-  },[fetchToDo])
+  // useEffect(()=>{
+  //   fetchToDo();
+  // },[fetchToDo])
 
   return (
-    <div className='h-[90vh] bg-grey rounded-lg p-4'>
+    <div className='h-[90vh] bg-grey rounded-lg p-4' id='list-todo'>
         <p className='text-[1.5rem] font-semibold'>To Do</p>
         <div id='list-todo' className='overflow-auto h-[80vh]' onDrop={handleOnDrop} onDragOver={e=>e.preventDefault()}>
           {

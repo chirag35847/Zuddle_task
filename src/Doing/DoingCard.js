@@ -10,12 +10,12 @@ const DoingCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
   const {doingList,setDoingList,fetchDoing,handleOnDrop} = DataState();
 
-  useEffect(()=>{
-    fetchDoing();
-  },[fetchDoing])
+  // useEffect(()=>{
+  //   fetchDoing();
+  // },[fetchDoing])
 
   return (
-    <div className='h-[90vh] bg-grey rounded-lg p-4'>
+    <div className='h-[90vh] bg-grey rounded-lg p-4' id='list-doing'>
         <p className='text-[1.5rem] font-semibold'>Doing</p>
         <div id='list-doing' className='overflow-auto h-[80vh]' onDrop={handleOnDrop} onDragOver={e=>e.preventDefault()}>
           {
