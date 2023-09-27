@@ -1,5 +1,6 @@
 import { SimpleGrid } from "@mantine/core";
 import ResourcesCard from "./Resource/ResourcesCard";
+import ToDoCard from './todo/ToDoCard';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         cols={4}
       >
         <ResourcesCard/>
+        <ToDoCard/>
         {/* <ResourcesCard/>
         <ResourcesCard/>
         <ResourcesCard/> */}

@@ -1,13 +1,13 @@
 import { Button, Modal, Space, TextInput } from '@mantine/core'
 import React, { useCallback, useState } from 'react'
 
-const ResourceModal = ({ opened, close, setResourceList, resourceList }) => {
+const ToDoAddModal = ({ opened, close, toDoList, setToDoList }) => {
     const [urlText, setUrlText] = useState('');
     const [name, setName] = useState('');
 
     const onClickHandler = useCallback(() => {
         const cur = {
-            id:resourceList.length+1,
+            id:toDoList.length+1,
             createdAt: new Date(),
             name: name,
             url: urlText,
@@ -16,9 +16,9 @@ const ResourceModal = ({ opened, close, setResourceList, resourceList }) => {
 
         // Post API here
 
-        setResourceList([cur, ...resourceList]);
+        setToDoList([cur, ...toDoList]);
         close();
-    }, [urlText, name, setResourceList, resourceList])
+    }, [urlText, name, setToDoList, toDoList])
 
     return (
         <Modal opened={opened} onClose={close} size="30vw" title="Add Resource Modal">
@@ -33,4 +33,4 @@ const ResourceModal = ({ opened, close, setResourceList, resourceList }) => {
     )
 }
 
-export default ResourceModal
+export default ToDoAddModal
