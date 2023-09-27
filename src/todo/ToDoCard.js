@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// const ToDoCard = () => {
-//   return (
-//     <div>ToDoCard</div>
-//   )
-// }
-
-// export default ToDoCard
-
 import { Button } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks';
 import React, { useCallback, useEffect, useState } from 'react'
@@ -16,7 +6,7 @@ import ToDoAddModal from './ToDoAddModal';
 import ToDoItem from './ToDoItem';
 // import ResourceListItem from './ResourceListItem';
 
-const ResourcesCard = () => {
+const ToDoCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
   const [toDoList,setToDoList] = useState([]);
   const fetchToDo = useCallback(()=>{
@@ -44,4 +34,4 @@ const ResourcesCard = () => {
   )
 }
 
-export default ResourcesCard
+export default ToDoCard
