@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Zuddle_task/static/css/main.5913ad38.css",
+    "main.js": "/Zuddle_task/static/js/main.a7dc7878.js",
+    "index.html": "/Zuddle_task/index.html",
+    "main.5913ad38.css.map": "/Zuddle_task/static/css/main.5913ad38.css.map",
+    "main.a7dc7878.js.map": "/Zuddle_task/static/js/main.a7dc7878.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5913ad38.css",
+    "static/js/main.a7dc7878.js"
+  ]
+}
