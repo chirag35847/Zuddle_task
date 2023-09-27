@@ -16,8 +16,24 @@ const DataProvider = ({children})=>{
         setDoneList(dummyDone)
     },[])
 
+    const fetchDoing=()=>{
+        setDoingList(dummyDoing)
+    }
+
+    const fetchToDo=()=>{
+        setToDoList(dummyToDo)
+    }
+
+    const fetchDone=()=>{
+        setDoneList(dummyDone)
+    }
+
+    const handleOnDrag=(e,data)=>{
+        e.dataTransfer.setData('widgetData',data);
+    }
+
     return (
-        <DataContext.Provider value={{toDoList,doingList,doneList,setDoingList,setToDoList,setDoneList}}>
+        <DataContext.Provider value={{toDoList,doingList,doneList,setDoingList,setToDoList,setDoneList,fetchDoing,fetchToDo,fetchDone,handleOnDrag}}>
             {children}
         </DataContext.Provider>
     )

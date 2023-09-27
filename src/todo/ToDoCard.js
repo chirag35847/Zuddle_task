@@ -9,11 +9,7 @@ import { DataState } from '../Context/DataProvider';
 
 const ToDoCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
-  const {toDoList,setToDoList} = DataState();
-  const fetchToDo = useCallback(()=>{
-    // API Call to fetch the resources from DB,
-    setToDoList(dummyToDo);
-  },[])
+  const {toDoList,setToDoList,fetchToDo} = DataState();
 
   useEffect(()=>{
     fetchToDo();
@@ -25,7 +21,7 @@ const ToDoCard = () => {
         <div className='overflow-auto h-[80vh]'>
           {
             toDoList.map((e,i)=>{
-              return <NonResourceItem key={i} item={e}/>
+              return <NonResourceItem key={i} item={e} from={'todo'}/>
             })
           }
         </div>

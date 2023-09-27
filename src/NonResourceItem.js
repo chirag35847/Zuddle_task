@@ -2,10 +2,13 @@ import React from 'react'
 import { Avatar, Image, Space, Text } from '@mantine/core'
 import { IconCheckbox, IconClock, IconPaperclip, IconTemplate } from '@tabler/icons-react'
 import { format } from 'date-fns'
+import { DataState } from './Context/DataProvider'
 
-const NonResourceItem = ({item}) => {
+const NonResourceItem = ({item,from}) => {
+  const {handleOnDrag} = DataState();
+
   return (
-    <div className='flex flex-col bg-white mb-5 rounded-lg p-3' draggable={true}>
+    <div className='flex flex-col bg-white mb-5 rounded-lg p-3' draggable onDragStart={(e)=>handleOnDrag(e,{item,from})}>
     {
       item.url != undefined && item.url != '' &&
       <Image fit='contain' h={'10vh'} radius={'md'} src={item.url} className='' mb={10}/>

@@ -8,11 +8,7 @@ import { DataState } from '../Context/DataProvider';
 
 const DoingCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
-  const {doingList,setDoingList} = DataState();
-  const fetchDoing = useCallback(()=>{
-    // API Call to fetch the resources from DB,
-    setDoingList(dummyDoing);
-  },[])
+  const {doingList,setDoingList,fetchDoing} = DataState();
 
   useEffect(()=>{
     fetchDoing();
@@ -24,7 +20,7 @@ const DoingCard = () => {
         <div className='overflow-auto h-[80vh]'>
           {
             doingList.map((e,i)=>{
-              return <NonResourceItem key={i} item={e}/>
+              return <NonResourceItem key={i} item={e} from={"doing"}/>
             })
           }
         </div>
