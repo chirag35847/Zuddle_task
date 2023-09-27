@@ -9,7 +9,7 @@ import { DataState } from '../Context/DataProvider';
 
 const ToDoCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
-  const {toDoList,setToDoList,fetchToDo} = DataState();
+  const {toDoList,setToDoList,fetchToDo,handleOnDrop} = DataState();
 
   useEffect(()=>{
     fetchToDo();
@@ -18,7 +18,7 @@ const ToDoCard = () => {
   return (
     <div className='h-[90vh] bg-grey rounded-lg p-4'>
         <p className='text-[1.5rem] font-semibold'>To Do</p>
-        <div className='overflow-auto h-[80vh]'>
+        <div id='list-todo' className='overflow-auto h-[80vh]' onDrop={handleOnDrop} onDragOver={e=>e.preventDefault()}>
           {
             toDoList.map((e,i)=>{
               return <NonResourceItem key={i} item={e} from={'todo'}/>

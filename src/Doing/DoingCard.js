@@ -8,7 +8,7 @@ import { DataState } from '../Context/DataProvider';
 
 const DoingCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
-  const {doingList,setDoingList,fetchDoing} = DataState();
+  const {doingList,setDoingList,fetchDoing,handleOnDrop} = DataState();
 
   useEffect(()=>{
     fetchDoing();
@@ -17,7 +17,7 @@ const DoingCard = () => {
   return (
     <div className='h-[90vh] bg-grey rounded-lg p-4'>
         <p className='text-[1.5rem] font-semibold'>Doing</p>
-        <div className='overflow-auto h-[80vh]'>
+        <div id='list-doing' className='overflow-auto h-[80vh]' onDrop={handleOnDrop} onDragOver={e=>e.preventDefault()}>
           {
             doingList.map((e,i)=>{
               return <NonResourceItem key={i} item={e} from={"doing"}/>

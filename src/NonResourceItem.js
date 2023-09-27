@@ -8,7 +8,7 @@ const NonResourceItem = ({item,from}) => {
   const {handleOnDrag} = DataState();
 
   return (
-    <div className='flex flex-col bg-white mb-5 rounded-lg p-3' draggable onDragStart={(e)=>handleOnDrag(e,{item,from})}>
+    <div className='flex flex-col bg-white mb-5 rounded-lg p-3' draggable onDragStart={(e)=>handleOnDrag(e,JSON.stringify({item,from}))}>
     {
       item.url != undefined && item.url != '' &&
       <Image fit='contain' h={'10vh'} radius={'md'} src={item.url} className='' mb={10}/>

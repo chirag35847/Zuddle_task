@@ -32,8 +32,32 @@ const DataProvider = ({children})=>{
         e.dataTransfer.setData('widgetData',data);
     }
 
+    const handleOnDrop=(e)=>{
+        const data = JSON.parse(e.dataTransfer.getData('widgetData'));
+
+        function getDropList(element, level = 1) { 
+            while (level-- > 0) {
+              element = element.parentNode;
+              if (!element) return null;
+              if(element.id!=''){
+                return element.id;
+              }
+            }
+            return element.id;
+        }
+
+        const dropList = getDropList(e.target,6);
+        // Values for from 
+        // doing
+        // done
+        // todo
+        if(dropList!=null || dropList!=''){
+            const from = data.from;
+        }
+    }
+
     return (
-        <DataContext.Provider value={{toDoList,doingList,doneList,setDoingList,setToDoList,setDoneList,fetchDoing,fetchToDo,fetchDone,handleOnDrag}}>
+        <DataContext.Provider value={{toDoList,doingList,doneList,setDoingList,setToDoList,setDoneList,fetchDoing,fetchToDo,fetchDone,handleOnDrag,handleOnDrop}}>
             {children}
         </DataContext.Provider>
     )
