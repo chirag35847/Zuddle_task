@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 
 const NonResourceItem = ({item}) => {
   return (
-    <div className='flex flex-col bg-white mb-5 rounded-lg p-3'>
+    <div className='flex flex-col bg-white mb-5 rounded-lg p-3' draggable={true}>
     {
       item.url != undefined && item.url != '' &&
       <Image fit='contain' h={'10vh'} radius={'md'} src={item.url} className='' mb={10}/>
