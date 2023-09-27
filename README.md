@@ -5,11 +5,12 @@
 ## How would your tables and apis change for the following scenarios. What tables and api endpoints would you add? Which tables and api endpoints would need to be updated?
 
 ## If a user can create and edit stages for a particular board. For example instead of Open > In Progress > Done if they want the stages of their task board to be Read > Working > Reviewing > Completed
-
-- API endpoints needed : /{boardName}
-The board name is the every board name that we want to give the functionality for.
-- - for creating we will have a `POST` method implemented which would get sanatized data from frontend and do the necessary changes
-- - for editing stages we will have `PATCH` method implemented
+- Table needed : Stage (`userId`,`stageName`,`order`,`isLast`,`listofTaskId's`) -> We need this table to know the stages, order of stages and knowing if a stage is to be taken as done, the key will be stageName here.
+- API : /allData -> `GET` method : We can map through all the stages and join this table with task table and present the data to user
+- API : /allData -> `POST` method : We can create a new task with this for a particular stage
+- API : /stage -> `POST` method : creating a new stage and updating the frontend with response of the API
+- Here user has some stages which they can create in any number and also tasks
+- Frontend changes like presenting forms for creating new stage or creating new task will always be there
 
 ## If users can comment on tasks
 - We would need to to add another field in the DB `comment`, this will be an array which may have fields like `comment`, `createdAt`,`commentedby` etc... depending on the user case
