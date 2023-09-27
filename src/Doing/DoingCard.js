@@ -2,8 +2,8 @@ import { Button } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks';
 import React, { useCallback, useEffect, useState } from 'react'
 import dummyDoing from '../data/doingList';
-import DoingItem from './DoingItem';
 import DoingModal from './DoingModal';
+import NonResourceItem from '../NonResourceItem';
 
 const DoingCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
@@ -23,7 +23,7 @@ const DoingCard = () => {
         <div className='overflow-auto h-[80vh]'>
           {
             doingList.map((e,i)=>{
-              return <DoingItem key={i} item={e}/>
+              return <NonResourceItem key={i} item={e}/>
             })
           }
         </div>

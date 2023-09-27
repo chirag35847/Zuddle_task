@@ -3,7 +3,7 @@ import { useDisclosure } from '@mantine/hooks';
 import React, { useCallback, useEffect, useState } from 'react'
 import dummyToDo from '../data/toDoList';
 import ToDoAddModal from './ToDoAddModal';
-import ToDoItem from './ToDoItem';
+import NonResourceItem from '../NonResourceItem';
 // import ResourceListItem from './ResourceListItem';
 
 const ToDoCard = () => {
@@ -24,7 +24,7 @@ const ToDoCard = () => {
         <div className='overflow-auto h-[80vh]'>
           {
             toDoList.map((e,i)=>{
-              return <ToDoItem key={i} item={e}/>
+              return <NonResourceItem key={i} item={e}/>
             })
           }
         </div>

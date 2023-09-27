@@ -1,9 +1,9 @@
 import { Button } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks';
 import React, { useCallback, useEffect, useState } from 'react'
-import dummyDone from '../data/toDoList';
-import DoneItem from './DoneItem';
+import dummyDone from '../data/done';
 import DoneModal from './DoneModal';
+import NonResourceItem from '../NonResourceItem';
 
 const DoneCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
@@ -17,13 +17,15 @@ const DoneCard = () => {
     fetchDone();
   },[fetchDone])
 
+  console.log(doneList);
+
   return (
     <div className='h-[90vh] bg-grey rounded-lg p-4'>
         <p className='text-[1.5rem] font-semibold'>Done</p>
         <div className='overflow-auto h-[80vh]'>
           {
             doneList.map((e,i)=>{
-              return <DoneItem key={i} item={e}/>
+              return <NonResourceItem key={i} item={e}/>
             })
           }
         </div>

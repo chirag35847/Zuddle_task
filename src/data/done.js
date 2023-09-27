@@ -1,10 +1,5 @@
 const doneList = [
     {
-        id:1,
-        name:"Focus Group : Corn vs. Flour Tortillas",
-        assignedTo:'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&fm=jpg',
-    },
-    {
         id:2,
         name:"New Swag : Socks, Scarves & Salsa",
         attachments:5,
@@ -32,7 +27,12 @@ const doneList = [
         url:'https://img.mensxp.com/media/content/2021/Nov/Leonardo-DiCaprios-Throws-Massive-Star-Studded-Birthday-Party1200_6190ef327aa85.jpeg',
         completedAt:new Date('08-08-2024'),
         createdAt:new Date('2011-04-13T10:20:30Z'),
-    }
+    },
+    {
+        id:1,
+        name:"Focus Group : Corn vs. Flour Tortillas",
+        assignedTo:'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&fm=jpg',
+    },
 ];
 
 export default doneList;
