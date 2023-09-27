@@ -5,10 +5,11 @@ import dummyToDo from '../data/toDoList';
 import ToDoAddModal from './ToDoAddModal';
 import NonResourceItem from '../NonResourceItem';
 // import ResourceListItem from './ResourceListItem';
+import { DataState } from '../Context/DataProvider';
 
 const ToDoCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
-  const [toDoList,setToDoList] = useState([]);
+  const {toDoList,setToDoList} = DataState();
   const fetchToDo = useCallback(()=>{
     // API Call to fetch the resources from DB,
     setToDoList(dummyToDo);

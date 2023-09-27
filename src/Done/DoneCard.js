@@ -4,10 +4,11 @@ import React, { useCallback, useEffect, useState } from 'react'
 import dummyDone from '../data/done';
 import DoneModal from './DoneModal';
 import NonResourceItem from '../NonResourceItem';
+import { DataState } from '../Context/DataProvider';
 
 const DoneCard = () => {
   const [opened, { close, open }] = useDisclosure(false);
-  const [doneList,setDoneList] = useState([]);
+  const {doneList,setDoneList} = DataState();
   const fetchDone = useCallback(()=>{
     // API Call to fetch the resources from DB,
     setDoneList(dummyDone);
